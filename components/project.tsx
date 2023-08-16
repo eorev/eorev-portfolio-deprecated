@@ -42,12 +42,12 @@ const Card = (Props: {
       <div className="p-4 relative z-20 h-full text-slate-300 group-hover:text-white transition-colors duration-500 flex flex-col justify-between">
         <FiArrowRight className="text-3xl group-hover:-rotate-45 transition-transform duration-500 ml-auto" />
         <div>
-          <h4>
+          <h4 className="text-sky-600">
             {Props.heading.split("").map((l, i) => (
               <ShiftLetter letter={l} key={i} />
             ))}
           </h4>
-          <p>{Props.description}</p>
+          <p className="text-sky-400">{Props.description}</p>
         </div>
       </div>
     </motion.div>
