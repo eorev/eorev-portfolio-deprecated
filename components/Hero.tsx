@@ -12,17 +12,18 @@ const Hero = () => {
         NET({
           el: vantaRef.current,
           THREE,
-          mouseControls: false,
+          mouseControls: true,
           touchControls: false,
           gyroControls: false,
           scale: 1.0,
           scaleMobile: 1.0,
-          color: 0x2320a2,
+          color: 0x0f172acc,
           backgroundColor: 0x0f172a,
           points: 20.0,
           maxDistance: 25.0,
-          spacing: 20.0,
+          spacing: 24.0,
           showDots: false,
+          opacity: 0.5,
         })
       );
     }

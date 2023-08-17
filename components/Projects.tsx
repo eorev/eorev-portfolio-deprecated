@@ -1,9 +1,20 @@
 import Project from "./project";
+import React, { forwardRef, Ref } from "react";
 
-const Projects = () => {
+type ProjectsProps = {
+  id?: string;
+};
+
+const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
   return (
     <>
-      <div className="flex flex-col items-center justify-center m-28 w-full h-full py-20 space-y-28">
+      <div
+        ref={ref}
+        className="flex flex-col items-center justify-center mt-0 mb-28 mx-auto w-full max-w-screen-xl h-full py-20 space-y-28 p-24"
+      >
+        <h1 className=" text-6xl font-black text-slate-100 md:text-8xl">
+          Projects
+        </h1>
         <Project
           title="OpenWaves"
           description="This project is currently a work in progress but the most stoked I have been about a project in a while.  OpenWaves is going to be a website built for surfers worldwide.  OpenWaves will use current surfcams and a AI model to detect how crowded surfbreaks are at that moment.  "
@@ -27,6 +38,8 @@ const Projects = () => {
       </div>
     </>
   );
-};
+});
+
+Projects.displayName = "Projects";
 
 export default Projects;
