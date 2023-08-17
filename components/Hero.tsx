@@ -1,9 +1,43 @@
 "use client";
+import React, { useEffect, useRef, useState } from "react";
+import NET from "vanta/dist/vanta.net.min";
+import * as THREE from "three";
 
 const Hero = () => {
+  const [vantaEffect, setVantaEffect] = useState<any>(null);
+  const vantaRef = useRef(null);
+  useEffect(() => {
+    if (!vantaEffect) {
+      setVantaEffect(
+        NET({
+          el: vantaRef.current,
+          THREE,
+          mouseControls: false,
+          touchControls: false,
+          gyroControls: false,
+          scale: 1.0,
+          scaleMobile: 1.0,
+          color: 0x2320a2,
+          backgroundColor: 0x0f172a,
+          points: 20.0,
+          maxDistance: 25.0,
+          spacing: 20.0,
+          showDots: false,
+        })
+      );
+    }
+    return () => {
+      if (vantaEffect) vantaEffect.destroy();
+    };
+  }, [vantaEffect]);
+
   return (
-    <section className="text-slat-100 overflow-hidden bg-slate-900 px-8 py-24 md:px-12 md:py-32">
-      <div className="relative mx-auto max-w-5xl">
+    <section
+      ref={vantaRef}
+      id="hero"
+      className="relative w-full h-screen text-slate-100 overflow-hidden bg-slate-900 flex items-center"
+    >
+      <div className="relative mx-auto max-w-5xl pl-8">
         <div className="pointer-events-none relative z-10">
           <h1 className="pointer-events-auto text-6xl font-black text-slate-100 md:text-8xl">
             Hi, I&#39;m Ethan<span className="text-indigo-500">.</span>
