@@ -1,11 +1,15 @@
 import Project from "./project";
 import React, { forwardRef, Ref } from "react";
+import { StaticImageData } from "next/image";
 
-type ProjectsProps = {
+type ProjectProps = {
   id?: string;
+  title?: string;
+  description?: string;
+  link?: string | StaticImageData;
 };
 
-const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
+const Projects = forwardRef<HTMLDivElement, ProjectProps>((props, ref) => {
   return (
     <>
       <div
@@ -21,9 +25,9 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
           link="https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
         />
         <Project
-          title="Project 1"
+          title="NyteAIO"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget nisl id libero molestie ultricies. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies."
-          link="https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+          link="/Nyte.jpg"
         />
         <Project
           title="Project 1"

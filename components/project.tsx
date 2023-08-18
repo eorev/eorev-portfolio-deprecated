@@ -1,11 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
+import { StaticImageData } from "next/image";
 
 const Project = (Props: {
   title: string;
   description: string;
-  link: string;
+  link: string | StaticImageData;
 }) => {
   return (
     <>
@@ -21,7 +22,7 @@ const Project = (Props: {
 const Card = (Props: {
   heading: string;
   description: string;
-  imgSrc: string;
+  imgSrc: string | StaticImageData;
 }) => {
   return (
     <motion.div
