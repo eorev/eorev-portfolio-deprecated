@@ -1,6 +1,5 @@
 import { FiMenu, FiArrowUpRight } from "react-icons/fi";
 import { useState } from "react";
-import { motion } from "framer-motion";
 
 type GlassLinkProps = {
   text: string;
@@ -54,12 +53,11 @@ const GlassNavigation: React.FC = () => {
 const GlassLink: React.FC<GlassLinkProps> = ({ text }) => (
   <a
     href="#"
-    className="group relative px-4 py-2 rounded-lg transition-transform hover:scale-105 active:scale-95"
+    className="group relative px-4 py-2 rounded-lg transition-transform hover:scale-105 active:scale-95 backdrop-blur-md bg-white/10"
   >
     <span className="relative z-10 text-white/90 transition-colors group-hover:text-white">
       {text}
     </span>
-    <span className="absolute inset-0 z-0 bg-gradient-to-br from-white/20 to-white/5 opacity-0 transition-opacity group-hover:opacity-100" />
   </a>
 );
 
