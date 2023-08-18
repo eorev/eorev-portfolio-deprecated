@@ -15,15 +15,14 @@ const Hero = () => {
           mouseControls: true,
           touchControls: false,
           gyroControls: false,
-          scale: 1.0,
-          scaleMobile: 1.0,
-          color: 0x0f172acc,
-          backgroundColor: 0x0f172a,
+          scale: 0.4,
+          scaleMobile: 0.4,
           points: 20.0,
           maxDistance: 25.0,
           spacing: 24.0,
           showDots: false,
-          opacity: 0.5,
+          color: 0xff3f81,
+          backgroundColor: 0x0f172a,
         })
       );
     }
