@@ -26,7 +26,7 @@ const Projects = forwardRef<HTMLDivElement, ProjectProps>((props, ref) => {
         />
         <Project
           title="NyteAIO"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget nisl id libero molestie ultricies. Sed vitae nisl eget nisl aliquam ultricies. Sed vitae nisl eget nisl aliquam ultricies."
+          description="Helping build the frontend for one the largest Sneaker-Bots was a invaluable experience for me.  This tought me about the beauty and elegance in building a frontend as well as seamless interactions."
           link="/Nyte.jpg"
         />
         <Project
