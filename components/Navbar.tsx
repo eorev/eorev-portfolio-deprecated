@@ -1,4 +1,3 @@
-"use client";
 import { FiMenu, FiArrowUpRight } from "react-icons/fi";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -30,9 +29,23 @@ const GlassNavigation: React.FC = () => {
           <GlassLink text="Projects" />
         </div>
 
-        {/* Mobile Menu */}
-        <MobileMenu menuOpen={menuOpen} />
-        <Buttons setMenuOpen={setMenuOpen} />
+        {/* Mobile Menu Button */}
+        {!menuOpen && (
+          <FiMenu
+            className="text-3xl text-white/90 transition-transform hover:scale-105 hover:text-white md:hidden"
+            onClick={() => setMenuOpen(true)}
+          />
+        )}
+
+        {/* Mobile Menu Links */}
+        {menuOpen && (
+          <div className="flex flex-col items-end gap-4 mt-4 md:hidden w-full">
+            <Buttons menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+            <GlassLink text="About" />
+            <GlassLink text="Contact" />
+            <GlassLink text="Projects" />
+          </div>
+        )}
       </div>
     </nav>
   );
@@ -51,26 +64,17 @@ const GlassLink: React.FC<GlassLinkProps> = ({ text }) => (
 );
 
 const Buttons: React.FC<{
+  menuOpen: boolean;
   setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}> = ({ setMenuOpen }) => (
-  <button
-    onClick={() => setMenuOpen((pv) => !pv)}
-    className="text-3xl text-white/90 transition-transform hover:scale-105 hover:text-white md:hidden"
-  >
-    <FiMenu />
-  </button>
-);
-
-const MobileMenu: React.FC<{ menuOpen: boolean }> = ({ menuOpen }) => (
-  <motion.div
-    initial={false}
-    animate={{ width: menuOpen ? "fit-content" : "0px" }}
-    className="flex overflow-hidden md:hidden"
-  >
-    <GlassLink text="About" />
-    <GlassLink text="Contact" />
-    <GlassLink text="Projects" />
-  </motion.div>
+}> = ({ menuOpen, setMenuOpen }) => (
+  <div className="flex justify-end w-full">
+    <button
+      onClick={() => setMenuOpen(false)}
+      className="text-3xl text-white/90 transition-transform hover:scale-105 hover:text-white md:hidden"
+    >
+      <FiArrowUpRight />
+    </button>
+  </div>
 );
 
 export default Navbar;
