@@ -19,14 +19,14 @@ const GlassNavigation: React.FC = () => {
 
   return (
     <nav className="glass-nav w-full mx-auto max-w-6xl border-[1px] border-white/10 bg-gradient-to-br from-white/30 to-white/10 backdrop-blur-md rounded-2xl px-5 py-5 flex items-center justify-between">
-      <span className="text-4xl font-black text-white">logo.</span>
+      <span className="text-4xl font-black text-white">E/O</span>
 
       <div className="flex items-center gap-4">
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-4">
+          <GlassLink text="Projects" />
           <GlassLink text="About" />
           <GlassLink text="Contact" />
-          <GlassLink text="Projects" />
         </div>
 
         {/* Mobile Menu Button */}
@@ -41,9 +41,9 @@ const GlassNavigation: React.FC = () => {
         {menuOpen && (
           <div className="flex flex-col items-end gap-4 mt-4 md:hidden w-full">
             <Buttons menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+            <GlassLink text="Projects" />
             <GlassLink text="About" />
             <GlassLink text="Contact" />
-            <GlassLink text="Projects" />
           </div>
         )}
       </div>
