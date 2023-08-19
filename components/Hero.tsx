@@ -49,10 +49,10 @@ const Hero = () => {
             </span>
           </h2>
           <p className="pointer-events-auto max-w-xl text-sm text-slate-300 md:text-base">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-            tenetur exercitationem neque quibusdam sed qui et ullam, ducimus
-            iure quas corporis quaerat culpa fuga quos, dolore, nemo nihil
-            soluta quo.
+            I aim to exceed client an employer expectations by delivering
+            scalable and efficient solutions to complex problems. I am currently
+            a student studying Computer Science and you can learn more about me
+            in my about section.
           </p>
           <button className="pointer-events-auto mt-4 rounded bg-indigo-600 px-4 py-2 font-medium text-slate-100 transition-all hover:bg-indigo-700 active:scale-95 md:mt-6">
             Contact me
